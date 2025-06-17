@@ -19,6 +19,11 @@
         }
 
         .letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
             width: 36px;
             height: 36px;
             border: 2px dotted darkslategrey;
@@ -96,10 +101,15 @@
                 background-color: burlywood;
             }
 
+            #keyboard {
+                width: 240px;
+            }
+
             .letter {
                 width: 18px;
                 height: 18px;
                 border: 1px otted darkslategrey;
+                font-size: 12px;
             }
         }
     </style>
@@ -152,6 +162,27 @@
         <div class="key">N</div>
         <div class="key">M</div>
         <div class="key special enter">ENTER</div>
+
+        <script>
+            const keyList = document.querySelectorAll(".key");
+            const letterList = document.querySelectorAll(".letter");
+            const currentIndex = 0;
+
+            keyList.forEach(key => {
+                key.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (!key.classList.contains("special")) {
+                        const keyValue = key.textContent;
+                        for (let letter of letterList) {
+                            if (letter.textContent === "") {
+                                letter.textContent = keyValue;
+                                break;
+                            }
+                        }
+                    }
+                });
+            })
+        </script>
     </div>
 </body>
 </html>
