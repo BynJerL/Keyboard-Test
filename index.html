@@ -166,19 +166,23 @@
         <script>
             const keyList = document.querySelectorAll(".key");
             const letterList = document.querySelectorAll(".letter");
-            const currentIndex = 0;
+            let word = "";
 
             keyList.forEach(key => {
                 key.addEventListener("click", (e) => {
                     e.preventDefault();
+                    const keyValue = key.textContent;
                     if (!key.classList.contains("special")) {
-                        const keyValue = key.textContent;
                         for (let letter of letterList) {
                             if (letter.textContent === "") {
                                 letter.textContent = keyValue;
+                                word += keyValue;
                                 break;
                             }
                         }
+                    } else {
+                        if (keyValue === "DEL") {}
+                        else if (keyValue === "ENTER") {}
                     }
                 });
             })
