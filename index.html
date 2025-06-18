@@ -181,7 +181,15 @@
                             }
                         }
                     } else {
-                        if (keyValue === "DEL") {}
+                        if (keyValue === "DEL") {
+                            for (let letter of Array.from(letterList).reverse()) {
+                                if (letter.textContent !== "") {
+                                    letter.textContent = "";
+                                    word = word.slice(0, -1);
+                                    break;
+                                }
+                            }
+                        }
                         else if (keyValue === "ENTER") {
                             console.log(word);
                             word = "";
