@@ -211,7 +211,7 @@
                                 }
                             }
                         }
-                        else if (keyValue === "ENTER") {
+                        else if (keyValue === "ENTER" && word.length >= 6) {
                             console.log(word);
                             word = "";
                             letterList.forEach(letter => {
