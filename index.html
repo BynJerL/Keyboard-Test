@@ -182,7 +182,13 @@
                         }
                     } else {
                         if (keyValue === "DEL") {}
-                        else if (keyValue === "ENTER") {}
+                        else if (keyValue === "ENTER") {
+                            console.log(word);
+                            word = "";
+                            letterList.forEach(letter => {
+                                letter.textContent = "";
+                            });
+                        }
                     }
                 });
             })
