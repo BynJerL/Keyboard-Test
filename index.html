@@ -172,7 +172,7 @@
                 key.addEventListener("click", (e) => {
                     e.preventDefault();
                     const keyValue = key.textContent;
-                    if (!key.classList.contains("special")) {
+                    if (!key.classList.contains("special") && word.length < 12) {
                         for (let letter of letterList) {
                             if (letter.textContent === "") {
                                 letter.textContent = keyValue;
